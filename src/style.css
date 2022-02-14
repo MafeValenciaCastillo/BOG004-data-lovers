@@ -2,16 +2,20 @@ body {
     margin: 0;
     padding: 0;
     background-color: #111224;   
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 
 .header {
     display: flex;
-    background-color: #0d0e1d;   
+    background-color: #0d0e1d;
     height: 6em;
     align-items: center;
     justify-content: space-between;
     border-bottom: 0.4em solid #A6751B;
-    position: fixed;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -32,6 +36,25 @@ h1 {
     /*border: 1px solid red;*/
 
 }
+
+#pagina1 {
+    display: block;
+}
+
+#pagina2 {
+    display: none;
+}
+
+.pag1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.pag2 {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .enlace {
     display: flex;
@@ -56,9 +79,6 @@ h1 {
 
     padding: 0 7em 0 7em;
 
-     
-    
-    
 }
 
 .reseña h2 {
@@ -77,27 +97,68 @@ h1 {
 }
 
 
-
-
-
-
-
-
 .botones {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding: 0 7em 0 7em;
+    /*border: 1px solid red;*/
+    
 }
 
 .campeones {
     border-radius: 5px;
-    padding: 7px 7px 7px 7px;
+    padding: 0.7em;
     transition: all 0.5s;
     cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #A6751B;
 }
 
 .top10 {
     border-radius: 5px;
-    padding: 7px 7px 7px 7px;
+    padding: 0.7em;
     transition: all 0.5s;
     cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #A6751B;
+}
+
+
+#pagina2 h5 p {
+    color: aliceblue;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: #0d0e1d; 
+    align-items: center;
+    justify-content: space-around;
+    border-top: 0.3em solid #A6751B;
+
+    margin-top: auto;
+    
+
+}
+
+.autors {
+    color: aliceblue;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.logoFinal {
+    display: flex;
+    align-items: center;
+    height: 4em;
+    width: 7em;
+    border: 1px solid red;
+}
+
+.imgLogoFinal {
+    max-width: 100%;
+    max-height: 100%;
 }
