@@ -7,9 +7,6 @@ export const example = () => {
 export const anotherExample = () => {
   return 'OMG';
 };
-export const campeones = arrayDatos.filter(item => item.tags === "Tank");
-console.log(campeones);
 
-export const nameChampions = () => {
-  return 
-}
+
+
