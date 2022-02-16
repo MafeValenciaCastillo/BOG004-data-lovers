@@ -48,6 +48,7 @@ h1 {
 .pag1 {
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
 .pag2 {
