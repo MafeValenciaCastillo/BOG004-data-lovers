@@ -8,8 +8,7 @@ var arrayDatos = Object.values(datos); // Data convertida a array (object.values
 let arrayFighter = arrayDatos.filter(dato => dato.tags.includes("Fighter")); //función includes nos sirve para preguntar si dentro de los valores que tiene la propiedad "tags" existe en este caso "Fighter"
 let arrayMagos = arrayDatos.filter(dato => dato.tags.includes("Mage"));
 
-//console.log(datos);
-//console.log(arrayDatos);
+
 //console.log("campeones filtrados:");
 console.log(arrayFighter);
 console.log(arrayMagos);
@@ -29,3 +28,9 @@ function hidePages(){
     document.getElementById('pagina1').style.display = 'none';
     document.getElementById('pagina2').style.display = 'block';
  }
+document.getElementById("junglabtn").addEventListener("click", lolJungla)
+
+function lolJungla(){
+    document.getElementById("pagina2").style.display = "none";
+    document.getElementById("paginaJungla").style.display = "block";
+}
