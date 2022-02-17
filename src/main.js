@@ -1,6 +1,7 @@
 
 import data from './data/lol/lol.js';
-
+import { dataFilter } from './data.js';
+/*
 const datos = data.data;
 
 var arrayDatos = Object.values(datos); // Data convertida a array (object.values)--- object.key
@@ -11,9 +12,16 @@ let arrayMagos = arrayDatos.filter(dato => dato.tags.includes("Mage"));
 
 //console.log("campeones filtrados:");
 console.log(arrayFighter);
-console.log(arrayMagos);
+console.log(arrayMagos);*/
 
+document.getElementById("junglabtn").addEventListener('click', junglaChamp());
 
+function junglaChamp () {
+    if (dataFilter(data, data.values.tags) == "Mage" || dataFilter(data,data.values.tags) == "Asassin") {
+        document.getElementById("showJungla").innerHTML(data.values.name)
+
+    }
+}
 
 /*
 campeonesFiltrados(tag){
