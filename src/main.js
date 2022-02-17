@@ -1,33 +1,38 @@
 
 import data from './data/lol/lol.js';
-import { dataFilter } from './data.js';
-/*
-const datos = data.data;
+import { rolLuchador, rolMagos, rolAsesinos, rolTanques, rolSoporte } from './data.js';
+const arrayDatos = Object.values(data.data);
+//console.log(arrayDatos);
 
-var arrayDatos = Object.values(datos); // Data convertida a array (object.values)--- object.key
-//Método Filter solo aplica para arreglos 
-let arrayFighter = arrayDatos.filter(dato => dato.tags.includes("Fighter")); //función includes nos sirve para preguntar si dentro de los valores que tiene la propiedad "tags" existe en este caso "Fighter"
-let arrayMagos = arrayDatos.filter(dato => dato.tags.includes("Mage"));
+console.log(rolLuchador(arrayDatos));
+console.log(rolMagos(arrayDatos));
+console.log(rolAsesinos(arrayDatos));
+console.log(rolTanques(arrayDatos));
+console.log(rolSoporte(arrayDatos));
 
+//Para pintar podemos usar:literaltemplates
 
-//console.log("campeones filtrados:");
-console.log(arrayFighter);
-console.log(arrayMagos);*/
+const informacionCampeon = document.getElementById("contenedorRoles");
 
-document.getElementById("junglabtn").addEventListener('click', junglaChamp());
+const mostrarEnpantalla = (campeones) =>{
+    informacionCampeon.innerHTML = "";
+    campeones.forEach((campeon) => {
+    const imagen = campeon.img;
+    let tarjeta = document.createElement("div");
+    tarjeta.setAttribute("class", "propiedadesRoles")
+    tarjeta.innerHTML = 
+    `
+    <img class = "image" src = ${imagen}>
+    <h3>${campeon.name}</h3>
+    <h4>${campeon.title}</h4>
 
-function junglaChamp () {
-    if (dataFilter(data, data.values.tags) == "Mage" || dataFilter(data,data.values.tags) == "Asassin") {
-        document.getElementById("showJungla").innerHTML(data.values.name)
+    `
+    informacionCampeon.appendChild(tarjeta);
 
-    }
+}) 
 }
 
-/*
-campeonesFiltrados(tag){
-    let campeones = arrayDatos.filter(dato => dato.tags.includes(tag));
-    return campeones;
-}*/
+
 
 // Cambio de paginas - boton campeones
 document.getElementById("campeonesbtn").addEventListener("click", hidePages)
@@ -36,9 +41,12 @@ function hidePages(){
     document.getElementById('pagina1').style.display = 'none';
     document.getElementById('pagina2').style.display = 'block';
  }
+ 
 document.getElementById("junglabtn").addEventListener("click", lolJungla)
 
 function lolJungla(){
     document.getElementById("pagina2").style.display = "none";
     document.getElementById("paginaJungla").style.display = "block";
+    mostrarEnpantalla(rolLuchador(arrayDatos));
+    
 }

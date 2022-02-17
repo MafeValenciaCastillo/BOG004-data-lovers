@@ -1,23 +1,28 @@
 // estas funciones son de ejemplo
 
-/*export const example = () => {
-  return 'example';
+export const rolLuchador = (arrayDatos) => {
+  let arrayFighter = arrayDatos.filter(dato => dato.tags.includes("Fighter"));
+  return arrayFighter;
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};*/
+export const rolMagos = (arrayDatos) => {
+  let arrayMagos = arrayDatos.filter(dato => dato.tags.includes("Mage"));
+  return arrayMagos;
+};
 
-import data from './data/lol/lol';
+export const rolAsesinos = (arrayDatos) => {
+  let arrayAsesinos = arrayDatos.filter(dato => dato.tags.includes("Assassin"));
+  return arrayAsesinos;
+};
 
-const dataLol = Object.values(data.data);
+export const rolTanques = (arrayDatos) => {
+  let arrayTanques = arrayDatos.filter(dato => dato.tags.includes("Tank"));
+  return arrayTanques;
+};
 
-export const dataFilter = (data, condicion) => {
-  let megaFilter = dataLol.filter ((values) => {
-    return values.data.includes (values);
-  })
-  return megaFilter;
-  
+export const rolSoporte = (arrayDatos) => {
+  let arraySoporte = arrayDatos.filter(dato => dato.tags.includes("Support"));
+  return arraySoporte;
 };
 
 
