@@ -34,29 +34,33 @@ h1 {
   /*border: 1px solid red;*/
 }
 
-#pagina1 {
+#home {
   display: block;
 }
 
-#pagina2 {
+#carriles {
   display: none;
 }
 
-#paginaJungla {
+.contenedorCampeones {
+  color: whitesmoke;
+}
+
+#salonCampeones {
   display: none;
 }
 
-.contenedorJungla {
+.contenedorSalonCampeones {
   color: aliceblue;
 }
 
-.pag1 {
+.contenedorHome {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.pag2 {
+.contenedorCarriles {
   display: flex;
   flex-direction: column;
 }
@@ -113,7 +117,7 @@ h1 {
   /*border: 1px solid red;*/
 }
 
-.campeones {
+.carriles {
   border-radius: 5px;
   padding: 0.7em;
   transition: all 0.5s;
@@ -135,7 +139,7 @@ h1 {
   color: #a6751b;
 }
 
-#pagina2 h5 p {
+#carriles h5 p {
   color: aliceblue;
 }
 

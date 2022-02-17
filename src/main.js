@@ -34,17 +34,70 @@ const mostrarEnpantalla = (campeones) =>{
 
 
 // Cambio de paginas - boton campeones
-document.getElementById("campeonesbtn").addEventListener("click", hidePages)
+document.getElementById("carrilesbtn").addEventListener("click", hidePages)
 
 function hidePages(){
-    document.getElementById('pagina1').style.display = 'none';
-    document.getElementById('pagina2').style.display = 'block';
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('carriles').style.display = 'block';
  }
-document.getElementById("junglabtn").addEventListener("click", lolJungla)
+
+//Boton Carril Superio
+document.getElementById("superiorBtn").addEventListener("click", lolSuperior)
+
+function lolSuperior(){
+    document.getElementById("carriles").style.display = "none";
+    document.getElementById("salonCampeones").style.display = "block";
+
+    document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Superior";
+
+        //Creacion del boton luchador
+    const botonLuchador = document.getElementById("contenedorBotones");
+    let btnLuchador = document.createElement("button");
+    btnLuchador.textContent = "Luchadores";
+    botonLuchador.appendChild(btnLuchador);
+
+    btnLuchador.addEventListener("click", ocultar() );
+
+    function ocultar() {
+        document.getElementById("")
+        mostrarEnpantalla(rolLuchador(arrayDatos))
+    }
+
+
+        //Creacion del boton Tanques
+    const botonTanques = document.getElementById("contenedorBotones");
+    let btnTanques = document.createElement("button");
+    btnTanques.textContent = "Tanques";
+    botonTanques.appendChild(btnTanques);
+
+    btnTanques.addEventListener("click", mostrarEnpantalla(rolTanques(arrayDatos)))
+
+
+    //mostrarEnpantalla(rolLuchador(arrayDatos));
+    //mostrarEnpantalla(rolTanques(arrayDatos));
+}
+
+// Boton Carril Jungla
+document.getElementById("junglaBtn").addEventListener("click", lolJungla)
 
 function lolJungla(){
-    document.getElementById("pagina2").style.display = "none";
-    document.getElementById("paginaJungla").style.display = "block";
+    document.getElementById("carriles").style.display = "none";
+    document.getElementById("salonCampeones").style.display = "block";
+
+    document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Jungla";
+
     mostrarEnpantalla(rolLuchador(arrayDatos));
-    
+}
+
+// Boton Carril Central
+document.getElementById("centralBtn").addEventListener("click", lolCentral)
+
+function lolCentral(){
+    document.getElementById("carriles").style.display = "none";
+    document.getElementById("salonCampeones").style.display = "block";
+
+    document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Central";
+
+    mostrarEnpantalla(rolMagos(arrayDatos));
+    mostrarEnpantalla(rolAsesinos(arrayDatos));
 }
