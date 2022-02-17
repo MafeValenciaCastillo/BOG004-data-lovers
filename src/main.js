@@ -3,7 +3,6 @@ import data from './data/lol/lol.js';
 import { rolLuchador, rolMagos, rolAsesinos, rolTanques, rolSoporte } from './data.js';
 const arrayDatos = Object.values(data.data);
 //console.log(arrayDatos);
-
 console.log(rolLuchador(arrayDatos));
 console.log(rolMagos(arrayDatos));
 console.log(rolAsesinos(arrayDatos));
@@ -41,7 +40,6 @@ function hidePages(){
     document.getElementById('pagina1').style.display = 'none';
     document.getElementById('pagina2').style.display = 'block';
  }
- 
 document.getElementById("junglabtn").addEventListener("click", lolJungla)
 
 function lolJungla(){
