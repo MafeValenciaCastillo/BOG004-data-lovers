@@ -27,7 +27,7 @@
 
     <main>
       
-      <section id="pagina1" class="pag1">
+      <section id="home" class="contenedorHome">
 
         <img src="./img/League-of-Legends-Pc.jpg" width="50%" height="50%" alt="Principal" class="imgPrincipal">
         <article class="reseña">
@@ -41,28 +41,37 @@
   
         <div class="botones">
   
-        <input type="button" class="campeones" id="campeonesbtn" value="Campeones" >
+        <input type="button" class="carriles" id="carrilesbtn" value="Carriles" >
         <input type="button" class="top10" id="top10btn" value= "Top 10">
   
         </div>
 
       </section>
       
-      <section id="pagina2" class="pag2">
+      <section id="carriles" class="contenedorCarriles">
 
         <img src="./img/top10.png" alt="top">
-        <input type="button" class="jungla" id="junglabtn" value="Jungla">
-
+        <input type="button" class="superior" id="superiorBtn" value="Superior">
+        <input type="button" class="jungla" id="junglaBtn" value="Jungla">
+        <input type="button" class="central" id="centralBtn" value="Central">
+        <input type="button" class="inferior" id="inferiorBtn" value="Inferior">
+        <input type="button" class="soporte" id="soporteBtn" value="Soporte">
       
 
       </section>
+      
+      <section id="campeones" class="contenedorCampeones">
 
-      <section id="paginaJungla" class="contenedorJungla">
-        <h2> Jungla </h2>
-       <div id="contenedorRoles" class="propiedadesRoles"> 
-         
-       </div>
+        <p id="titulo"></p>
+        <div id="contenedorBotones"></div>
+
+        <div id="salonCampeones" class="contenedorSalonCampeones">
+          
+         <div id="contenedorRoles" class="propiedadesRoles"></div>
+        </div>      
+
       </section>
+      
      
 
 
