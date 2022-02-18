@@ -2,33 +2,37 @@
 import data from './data/lol/lol.js';
 import { rolLuchador, rolMagos, rolAsesinos, rolTanques, rolSoporte } from './data.js';
 const arrayDatos = Object.values(data.data);
-//console.log(arrayDatos);
 
-console.log(rolLuchador(arrayDatos));
-console.log(rolMagos(arrayDatos));
-console.log(rolAsesinos(arrayDatos));
-console.log(rolTanques(arrayDatos));
-console.log(rolSoporte(arrayDatos));
 
 //Para pintar podemos usar:literaltemplates
 
 const informacionCampeon = document.getElementById("contenedorRoles");
-
 const mostrarEnpantalla = (campeones) =>{
     informacionCampeon.innerHTML = "";
     campeones.forEach((campeon) => {
     const imagen = campeon.img;
     let tarjeta = document.createElement("div");
     tarjeta.setAttribute("class", "propiedadesRoles")
-    tarjeta.innerHTML = 
-    `
-    <img class = "image" src = ${imagen}>
+    tarjeta.innerHTML = ` <img class = "image" src = ${imagen}>
     <h3>${campeon.name}</h3>
-    <h4>${campeon.title}</h4>
+    <h4>${campeon.title}</h4> `
 
-    `
     informacionCampeon.appendChild(tarjeta);
+}) 
+}
 
+const informacionCampeonSeleccionado = document.getElementById("seleccionCampeones");
+const mostrarEnpantallaSeleccionados = (campeones) =>{
+    informacionCampeonSeleccionado.innerHTML = "";
+    campeones.forEach((campeon) => {
+    let imagen = campeon.img;
+    let tarjeta = document.createElement("div");
+    tarjeta.setAttribute("class", "contenedorSeleccionCampeones")
+    tarjeta.innerHTML = `<img class = "image" src = ${imagen}>
+    <h3>${campeon.name}</h3>
+    <h4>${campeon.title}</h4> `
+
+    informacionCampeonSeleccionado.appendChild(tarjeta);
 }) 
 }
 
@@ -42,7 +46,7 @@ function hidePages(){
     document.getElementById('carriles').style.display = 'block';
  }
 
-//Boton Carril Superio
+//Boton Carril Superior
 document.getElementById("superiorBtn").addEventListener("click", lolSuperior)
 
 function lolSuperior(){
@@ -51,31 +55,31 @@ function lolSuperior(){
 
     document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Superior";
 
-        //Creacion del boton luchador
+    //mostrarEnpantalla(rolLuchador(arrayDatos));
+    //mostrarEnpantalla(rolTanques(arrayDatos));
+
+    //Creacion del boton luchador
     const botonLuchador = document.getElementById("contenedorBotones");
     let btnLuchador = document.createElement("button");
     btnLuchador.textContent = "Luchadores";
     botonLuchador.appendChild(btnLuchador);
 
-    btnLuchador.addEventListener("click", ocultar() );
-
+    btnLuchador.addEventListener("click", ocultar);
     function ocultar() {
-        document.getElementById("")
-        mostrarEnpantalla(rolLuchador(arrayDatos))
+        mostrarEnpantallaSeleccionados(rolLuchador(arrayDatos));
     }
 
 
-        //Creacion del boton Tanques
+    //Creacion del boton Tanques
     const botonTanques = document.getElementById("contenedorBotones");
     let btnTanques = document.createElement("button");
     btnTanques.textContent = "Tanques";
     botonTanques.appendChild(btnTanques);
 
-    btnTanques.addEventListener("click", mostrarEnpantalla(rolTanques(arrayDatos)))
-
-
-    //mostrarEnpantalla(rolLuchador(arrayDatos));
-    //mostrarEnpantalla(rolTanques(arrayDatos));
+    btnTanques.addEventListener("click", ocultarT);
+    function ocultarT() {
+        mostrarEnpantallaSeleccionados(rolTanques(arrayDatos));
+    }
 }
 
 // Boton Carril Jungla
