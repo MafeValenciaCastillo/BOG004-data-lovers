@@ -42,6 +42,14 @@ h1 {
   display: none;
 }
 
+.seleccionCampeones {
+  display: none;
+}
+
+.contenedorRoles {
+  display: block;
+}
+
 .contenedorCampeones {
   color: whitesmoke;
 }
@@ -182,3 +190,21 @@ footer {
   max-width: 100%;
   max-height: 100%;
 }
+
+.divImgPrincipal {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
+
+@media screen and (min-width: 1200px) {
+  .divImgPrincipal {
+    height: 105%;
+  }
+}
+@media screen and (max-width: 700px) {
+  divImgPrincipal {
+    grid-column: 1/-1;
+  }
+  
