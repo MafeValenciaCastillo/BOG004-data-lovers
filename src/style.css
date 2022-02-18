@@ -42,6 +42,14 @@ h1 {
   display: none;
 }
 
+.seleccionCampeones {
+  display: none;
+}
+
+.contenedorRoles {
+  display: block;
+}
+
 .contenedorCampeones {
   color: whitesmoke;
 }
