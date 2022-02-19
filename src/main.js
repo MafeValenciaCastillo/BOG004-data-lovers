@@ -3,7 +3,6 @@ import data from './data/lol/lol.js';
 import { rolLuchador, rolMagos, rolAsesinos, rolTanques, rolSoporte } from './data.js';
 const arrayDatos = Object.values(data.data);
 
-
 //Para pintar podemos usar:literaltemplates
 
 const informacionCampeon = document.getElementById("contenedorRoles");
