@@ -25,4 +25,24 @@ export const rolSoporte = (arrayDatos) => {
   return arraySoporte;
 };
 
+export const rolTiradores = (arrayDatos) => {
+  let arrayTiradores = arrayDatos.filter(dato => dato.tags.includes("Marksman"));
+  return arrayTiradores;
+};
+
+export const ordenarPorAtaque = (arrayDatos) => {
+  let ordenarAtaque = arrayDatos.sort((a, b) => {
+    if (a.info.attack > b.info.attack ) {
+      return -1
+    }
+    if (a.info.attack < b.info.attack ) {
+      return 1
+    }
+    return 0;
+  });
+  return ordenarAtaque;
+}
+
+
+
 
