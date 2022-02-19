@@ -196,15 +196,14 @@ footer {
   grid-template-columns: 1fr;
 }
 
-
-
 @media screen and (min-width: 1200px) {
   .divImgPrincipal {
     height: 105%;
   }
 }
-@media screen and (max-width: 700px) {
-  divImgPrincipal {
-    grid-column: 1/-1;
+@media screen and (max-width: 640px) {
+  .imgPrincipal {
+    height: 300px;
+    width: 640px;
   }
-  
+}
