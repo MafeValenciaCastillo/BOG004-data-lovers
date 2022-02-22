@@ -1,45 +1,28 @@
 
 import data from './data/lol/lol.js';
-import { rolLuchador, rolMagos, rolAsesinos, rolTanques, rolSoporte, rolTiradores, ordenarPorAtaque } from './data.js';
+import { rolLuchador, rolMagos, rolAsesinos, rolTanques, rolSoporte, rolTiradores, ordenarPorAtaque, rolFiltro } from './data.js';
 const arrayDatos = Object.values(data.data);
+
+const copyArrayDatos = [...arrayDatos];
 
 //Para pintar podemos usar:literaltemplates
 
-console.log(ordenarPorAtaque(arrayDatos));
+console.log(ordenarPorAtaque(copyArrayDatos));
 
 const informacionCampeon = document.getElementById("contenedorRoles");
 const mostrarEnpantalla = (campeones) =>{
     informacionCampeon.innerHTML = "";
     campeones.forEach((campeon) => {
-    const imagen = campeon.img;
+    const imagen = campeon.splash;
     let tarjeta = document.createElement("div");
     tarjeta.setAttribute("class", "propiedadesRoles")
     tarjeta.innerHTML = ` <img class = "image" src = ${imagen}>
     <h3>${campeon.name}</h3>
     <h4>${campeon.title}</h4> 
-    <h4>${"Nivel de Ataque: " + campeon.info.attack}</h4>
-    `
-
+    <h4>${"Nivel de Ataque: " + campeon.info.attack}</h4> `
     informacionCampeon.appendChild(tarjeta);
 }) 
 }
-
-const informacionCampeonSeleccionado = document.getElementById("seleccionCampeones");
-const mostrarEnpantallaSeleccionados = (campeones) =>{
-    informacionCampeonSeleccionado.innerHTML = "";
-    campeones.forEach((campeon) => {
-    let imagen = campeon.img;
-    let tarjeta = document.createElement("div");
-    tarjeta.setAttribute("class", "contenedorSeleccionCampeones")
-    tarjeta.innerHTML = `<img class = "image" src = ${imagen}>
-    <h3>${campeon.name}</h3>
-    <h4>${campeon.title}</h4> 
-    <h4>${"Nivel de Ataque: " + campeon.info.attack}</h4>`
-    informacionCampeonSeleccionado.appendChild(tarjeta);
-}) 
-}
-
-
 
 // Cambio de paginas - boton campeones
 document.getElementById("carrilesbtn").addEventListener("click", hidePages)
@@ -47,7 +30,7 @@ document.getElementById("carrilesbtn").addEventListener("click", hidePages)
 function hidePages(){
     document.getElementById('home').style.display = 'none';
     document.getElementById('carriles').style.display = 'block';
- }
+}
 
 //Boton Carril Superior
 document.getElementById("superiorBtn").addEventListener("click", lolSuperior)
@@ -57,51 +40,87 @@ function lolSuperior(){
     document.getElementById("salonCampeones").style.display = "block";
 
     document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Superior";
+    document.getElementById("tituloPorRoles").innerHTML = "Luchadores y Tanques";
 
-     //Creacion del boton luchador
-     const botonLuchador = document.getElementById("contenedorBotones");
-     let btnLuchador = document.createElement("button");
-     btnLuchador.textContent = "Luchadores";
-     botonLuchador.appendChild(btnLuchador);
- 
-     btnLuchador.addEventListener("click", ocultar);
-     function ocultar() {
-        /* //boton
-        const botonOrganizar = document.getElementById("contenedorBotones");
-        let btnOrganizar = document.createElement("button");
-        btnOrganizar.textContent = "Organizar";
-        botonOrganizar.appendChild(btnOrganizar);
-
-        btnOrganizar.addEventListener("click", ordenarAtaque);
-
-        function ordenarAtaque() {
-            rolLuchador(ordenarPorAtaque(arrayDatos));
-            console.log(rolLuchador(arrayDatos))
-            
-        }*/
-
-         mostrarEnpantallaSeleccionados(rolLuchador(arrayDatos));
-     }
- 
-     //Creacion del boton Tanques
-     const botonTanques = document.getElementById("contenedorBotones");
-     let btnTanques = document.createElement("button");
-     btnTanques.textContent = "Tanques";
-     botonTanques.appendChild(btnTanques);
- 
-     btnTanques.addEventListener("click", ocultarT);
-     function ocultarT() {
-         mostrarEnpantallaSeleccionados(rolTanques(arrayDatos));
-     }
-
-    //mostrarEnpantalla(rolLuchador(arrayDatos));
-    //mostrarEnpantalla(rolTanques(arrayDatos));
+    //mostrarEnpantalla(rolLuchador(arrayDatos), rolTanques(arrayDatos));
+    mostrarEnpantalla(rolFiltro("Fighter") , rolFiltro("Tank"));
 
     //console.log((rolLuchador(arrayDatos)));
     //console.log(rolTanques(arrayDatos));
 
+    
+     //Creacion del boton luchador
+     const contenedorBotonLuchador = document.getElementById("contenedorBotones");
+     let btnLuchador = document.createElement("button");
+     btnLuchador.textContent = "Luchadores";
+     contenedorBotonLuchador.appendChild(btnLuchador);
+
+ 
+     btnLuchador.addEventListener("click", mostrarLuchadores);
+
+     function mostrarLuchadores() {
+        informacionCampeon.innerHTML = "";
+        
+        document.getElementById("tituloPorRoles").innerHTML = "Luchadores";
+
+        mostrarEnpantalla(rolFiltro("Fighter"));
+        
+
+        
+        //boton
+        const botonOrganizarLuchadoresAtaque = document.getElementById("contenedorBotones");
+        let btnOrganizar = document.createElement("button");
+        btnOrganizar.textContent = "Organizar";
+        botonOrganizarLuchadoresAtaque.appendChild(btnOrganizar);
+
+        btnOrganizar.addEventListener("click", mostrarEnpantalla(ordenarAtaque()));
+
+        function ordenarAtaque() {
+            console.log(rolFiltro("Fighter"));
+            const ataqueOrdenado = ordenarPorAtaque(rolFiltro("Fighter"));
+            
+            console.log(ataqueOrdenado);
+            return ataqueOrdenado;
+            
+            //console.log(rolLuchador(arrayDatos))
+            
+        }
+
+    }
+
+ 
+     //Creacion del boton Tanques
+    const contenedorBotonTanque = document.getElementById("contenedorBotones");
+    let btnTanques = document.createElement("button");
+    btnTanques.textContent = "Tanques";
+    contenedorBotonTanque.appendChild(btnTanques);
+ 
+    btnTanques.addEventListener("click", mostrarTanques);
+    function mostrarTanques() {
+        informacionCampeon.innerHTML = "";
+        
+        document.getElementById("tituloPorRoles").innerHTML = "Tanques";
+         mostrarEnpantalla(rolFiltro("Tank"));
+    }
+
+    
+
+    //console.log((rolLuchador(arrayDatos)));
+    //console.log(rolTanques(arrayDatos));*/
+
    
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // Boton Carril Jungla
 document.getElementById("junglaBtn").addEventListener("click", lolJungla)
@@ -119,7 +138,7 @@ function lolJungla(){
 
     btnLuchador.addEventListener("click", ocultar);
     function ocultar() {
-        mostrarEnpantallaSeleccionados(rolLuchador(arrayDatos));
+        mostrarEnpantalla(rolLuchador(arrayDatos));
     }
 }
 
@@ -140,7 +159,7 @@ function lolCentral(){
 
     btnAsesino.addEventListener("click", ocultar);
     function ocultar() {
-        mostrarEnpantallaSeleccionados(rolAsesinos(arrayDatos));
+        mostrarEnpantalla(rolAsesinos(arrayDatos));
     }
 
     //Creacion del Magos
@@ -151,7 +170,7 @@ function lolCentral(){
 
     btnMagos.addEventListener("click", ocultarT);
     function ocultarT() {
-        mostrarEnpantallaSeleccionados(rolMagos(arrayDatos));
+        mostrarEnpantalla(rolMagos(arrayDatos));
     }
 
     //mostrarEnpantalla(rolMagos(arrayDatos));
@@ -175,7 +194,7 @@ function lolInferior(){
 
     btTiradores.addEventListener("click", ocultar);
     function ocultar() {
-        mostrarEnpantallaSeleccionados(rolTiradores(arrayDatos));
+        mostrarEnpantalla(rolTiradores(arrayDatos));
     }
 
     //Creacion del Soporte
@@ -186,7 +205,7 @@ function lolInferior(){
 
     btnSoporte.addEventListener("click", ocultarT);
     function ocultarT() {
-        mostrarEnpantallaSeleccionados(rolSoporte(arrayDatos));
+        mostrarEnpantalla(rolSoporte(arrayDatos));
     }
 
     //mostrarEnpantalla(rolMagos(arrayDatos));
@@ -211,7 +230,7 @@ function lolSoporte(){
 
     btnSoporte.addEventListener("click", ocultar);
     function ocultar() {
-        mostrarEnpantallaSeleccionados(rolSoporte(arrayDatos));
+        mostrarEnpantalla(rolSoporte(arrayDatos));
     }
 
     //Creacion del boton Tanques
@@ -222,7 +241,7 @@ function lolSoporte(){
 
     btnTanques.addEventListener("click", ocultarT);
     function ocultarT() {
-        mostrarEnpantallaSeleccionados(rolTanques(arrayDatos));
+        mostrarEnpantalla(rolTanques(arrayDatos));
     }
 
 

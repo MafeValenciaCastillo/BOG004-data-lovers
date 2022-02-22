@@ -1,5 +1,10 @@
 // estas funciones son de ejemplo
 
+import data from './data/lol/lol.js';
+const arrayDatos = Object.values(data.data);
+
+const copyArrayDatos = [...arrayDatos];
+
 export const rolLuchador = (arrayDatos) => {
   let arrayFighter = arrayDatos.filter(dato => dato.tags.includes("Fighter"));
   return arrayFighter;
@@ -30,8 +35,9 @@ export const rolTiradores = (arrayDatos) => {
   return arrayTiradores;
 };
 
-export const ordenarPorAtaque = (arrayDatos) => {
-  let ordenarAtaque = arrayDatos.sort((a, b) => {
+ 
+export const ordenarPorAtaque = (copyArrayDatos) => {
+  let ordenarAtaque = copyArrayDatos.sort((a, b) => {
     if (a.info.attack > b.info.attack ) {
       return -1
     }
@@ -41,6 +47,11 @@ export const ordenarPorAtaque = (arrayDatos) => {
     return 0;
   });
   return ordenarAtaque;
+}
+
+export const rolFiltro = (rol) => {
+  const campeonesFiltro = arrayDatos.filter(campeon => campeon.tags.includes(rol));
+  return campeonesFiltro;
 }
 
 
