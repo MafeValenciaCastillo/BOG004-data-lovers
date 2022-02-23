@@ -20,7 +20,7 @@ const mostrarEnpantalla = (campeones) => {
     tarjeta.innerHTML = ` <img class = "image" src = ${imagen}>
     <h3>${campeon.name}</h3>
     <h4>${campeon.title}</h4> 
-    <h4>${"Nivel de Ataque: " + campeon.info.attack}</h4> `
+    <h4>${"Nivel de ataque: " + campeon.info.attack}</h4> `
     informacionCampeon.appendChild(tarjeta);
 }) 
 }
@@ -87,12 +87,23 @@ function lolSuperior(){
         document.getElementById("tituloPorRoles").innerHTML = "Luchadores";
         mostrarEnpantalla(rolFiltro("Fighter"));
     }
+
         
     //Creacion del boton Tanques
+
+    const botonOrganizarLuchadoresAtaque = document.getElementById("contenedorBotones");
+    let btnOrganizar = document.createElement("button");
+    btnOrganizar.textContent = "Organizar";
+    botonOrganizarLuchadoresAtaque.appendChild(btnOrganizar);
+
+
+    btnOrganizar.addEventListener("click", mostrarEnpantalla(ordenarAtaque()));
+
+    function ordenarAtaque() {
+
     const contenedorBotonTanque = document.getElementById("contenedorBotones");
     let btnTanques = document.createElement("button");
     btnTanques.textContent = "Tanques";
-    contenedorBotonTanque.appendChild(btnTanques);
  
     btnTanques.addEventListener("click", mostrarTanques);
     function mostrarTanques() {
