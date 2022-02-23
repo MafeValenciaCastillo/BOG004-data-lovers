@@ -148,10 +148,7 @@ function lolCentral(){
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Magos";
         mostrarEnpantalla(rolFiltro("Mage"));    }
-
-    //mostrarEnpantalla(rolMagos(arrayDatos));
-    //mostrarEnpantalla(rolAsesinos(arrayDatos));
-}
+    }
 
 // Boton Carril Inferior
 document.getElementById("inferiorBtn").addEventListener("click", lolInferior)
@@ -163,15 +160,20 @@ function lolInferior(){
 
     document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Inferior";
 
+    mostrarEnpantalla(rolFiltro("Marksman") , rolFiltro("Support"));
+
+
     //Creacion del boton Tiradores
     const botonTiradores = document.getElementById("contenedorBotones");
     let btTiradores = document.createElement("button");
     btTiradores.textContent = "Tiradores";
     botonTiradores.appendChild(btTiradores);
 
-    btTiradores.addEventListener("click", ocultar);
-    function ocultar() {
-        mostrarEnpantalla(rolTiradores(arrayDatos));
+    btTiradores.addEventListener("click", mostrarTiradores);
+    function mostrarTiradores() {
+        informacionCampeon.innerHTML = "";
+        document.getElementById("tituloPorRoles").innerHTML = "Tiradores";
+        mostrarEnpantalla(rolFiltro("Marksman")); 
     }
 
     //Creacion del Soporte
@@ -182,7 +184,9 @@ function lolInferior(){
 
     btnSoporte.addEventListener("click", ocultarT);
     function ocultarT() {
-        mostrarEnpantalla(rolSoporte(arrayDatos));
+        informacionCampeon.innerHTML = "";
+        document.getElementById("tituloPorRoles").innerHTML = "Tiradores";
+        mostrarEnpantalla(rolFiltro("Support")); 
     }
 
     //mostrarEnpantalla(rolMagos(arrayDatos));
@@ -221,9 +225,4 @@ function lolSoporte(){
     function ocultarT() {
         mostrarEnpantalla(rolTanques(arrayDatos));
     }
-
-
-
-    //mostrarEnpantalla(rolMagos(arrayDatos));
-    //mostrarEnpantalla(rolAsesinos(arrayDatos));
 }
