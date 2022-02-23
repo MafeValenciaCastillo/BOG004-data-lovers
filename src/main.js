@@ -19,7 +19,7 @@ const mostrarEnpantalla = (campeones) =>{
     tarjeta.innerHTML = ` <img class = "image" src = ${imagen}>
     <h3>${campeon.name}</h3>
     <h4>${campeon.title}</h4> 
-    <h4>${"Nivel de Ataque: " + campeon.info.attack}</h4> `
+    <h4>${"Nivel de ataque: " + campeon.info.attack}</h4> `
     informacionCampeon.appendChild(tarjeta);
 }) 
 }
@@ -65,29 +65,24 @@ function lolSuperior(){
 
         mostrarEnpantalla(rolFiltro("Fighter"));
         
-
-        
-        //boton
-        const botonOrganizarLuchadoresAtaque = document.getElementById("contenedorBotones");
-        let btnOrganizar = document.createElement("button");
-        btnOrganizar.textContent = "Organizar";
-        botonOrganizarLuchadoresAtaque.appendChild(btnOrganizar);
-
-        btnOrganizar.addEventListener("click", mostrarEnpantalla(ordenarAtaque()));
-
-        function ordenarAtaque() {
-            console.log(rolFiltro("Fighter"));
-            const ataqueOrdenado = ordenarPorAtaque(rolFiltro("Fighter"));
-            
-            console.log(ataqueOrdenado);
-            return ataqueOrdenado;
-            
-            //console.log(rolLuchador(arrayDatos))
-            
-        }
-
     }
+    const botonOrganizarLuchadoresAtaque = document.getElementById("contenedorBotones");
+    let btnOrganizar = document.createElement("button");
+    btnOrganizar.textContent = "Organizar";
+    botonOrganizarLuchadoresAtaque.appendChild(btnOrganizar);
 
+    btnOrganizar.addEventListener("click", mostrarEnpantalla(ordenarAtaque()));
+
+    function ordenarAtaque() {
+        console.log(rolFiltro("Fighter"));
+        const ataqueOrdenado = ordenarPorAtaque(rolFiltro("Fighter"));
+        
+        console.log(ataqueOrdenado);
+        return ataqueOrdenado;
+        
+        //console.log(rolLuchador(arrayDatos))
+        
+    }
  
      //Creacion del boton Tanques
     const contenedorBotonTanque = document.getElementById("contenedorBotones");

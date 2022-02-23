@@ -45,11 +45,10 @@ h1 {
   display: none;
 }
 
-
 #contenedorRoles {
   display: grid;
   grid-gap: 2em;
-  grid-template-columns:repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   margin-bottom: 50px;
   width: 100%;
   justify-items: center;
@@ -64,7 +63,6 @@ h1 {
   border: #a6751b 0.3em outset;
   display: flex;
   flex-direction: column;
-
 }
 
 .propiedadesRoles h3 h4 {
@@ -112,7 +110,6 @@ h1 {
 }
 
 #contenedorBotones {
-
 }
 
 #contenedorBotones button {
@@ -228,16 +225,20 @@ footer {
   margin-top: auto;
 }
 
-.autors {
+.autors h4 {
   color: aliceblue;
   font-family: "Source Sans Pro", sans-serif;
+  flex-basis: 70%;
+  padding-right: 5em;
 }
 
 .logoFinal {
   display: flex;
+  justify-content: right;
   height: 2em;
   width: 7em;
-  border: 1px solid red;
+  flex-basis: 60%;
+  padding-right: 5em;
 }
 
 .imgLogoFinal {
