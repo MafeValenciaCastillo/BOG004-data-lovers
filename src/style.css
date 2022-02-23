@@ -49,6 +49,9 @@ h1 {
   display: none;
 }
 
+#estadisticasLol {
+  display: none;
+}
 
 
 #contenedorRoles {
@@ -155,7 +158,7 @@ h1 {
   color: #C8AA6E;
   background-color: #070D15;
   border-color: #a6751b;
-  border-width: 1px;
+  border-width: 0.14em;
   border-style: solid;
 }
 
@@ -176,7 +179,7 @@ h1 {
   color: #C8AA6E;
   background-color: #070D15;
   border-color: #a6751b;
-  border-width: 1px;
+  border-width: 0.14em;
   border-style: solid;
 }
 .jungla:hover {
@@ -196,7 +199,7 @@ h1 {
   color: #C8AA6E;
   background-color: #070D15;
   border-color: #a6751b;
-  border-width: 1px;
+  border-width: 0.14em;
   border-style: solid;
 }
 
@@ -216,7 +219,7 @@ h1 {
   color: #C8AA6E;
   background-color: #070D15;
   border-color: #a6751b;
-  border-width: 1px;
+  border-width: 0.14em;
   border-style: solid;
 }
 
@@ -237,7 +240,7 @@ h1 {
   color: #C8AA6E;
   background-color: #070D15;
   border-color: #a6751b;
-  border-width: 1px;
+  border-width: 0.14em;
   border-style: solid;
 }
 
@@ -379,7 +382,7 @@ h1 {
   color: #a6751b;
 }
 
-.top10 {
+.estadisticas {
   border-radius: 5px;
   padding: 0.7em;
   transition: all 0.5s;
@@ -403,7 +406,7 @@ footer {
   border-top: 0.3em solid #a6751b;
   bottom: 0;
   width: 100%;
-  position: fixed;
+  position:static;
   margin-top: 5em;
 }
 
@@ -414,9 +417,11 @@ footer {
 
 .logoFinal {
   display: flex;
+  justify-content: right;
   height: 2em;
   width: 7em;
-  border: 1px solid red;
+  flex-basis: 60%;
+  padding-right: 5em;
 }
 
 .imgLogoFinal {

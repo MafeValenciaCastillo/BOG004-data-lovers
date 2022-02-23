@@ -10,23 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
-
     <header class="header">
-
        <h1>Bienvenidos a la grieta del invocador</h1>
-
       <div class="contenedorLogo">
         <img src="./img/logo.png" width="80em" height="80em" class="logo" alt="Logo LOL">
       </div>
-
       <div class="enlace">
         <a href="https://www.leagueoflegends.com/es-es/">Ir a jugar</a>
       </div>
-      
     </header>
 
     <main>
-      
       <section id="home" class="contenedorHome">
         <div class="divImgPrincipal">
           <img src="./img/League-of-Legends-Pc.jpg" width="100%" height="100%" alt="Principal" class="imgPrincipal">
@@ -49,100 +43,70 @@
           </p>
 
         </article>
-  
-  
-  
+   
         <div class="botones">
-  
-        <input type="button" class="carriles" id="carrilesbtn" value="Carriles" >
-        <input type="button" class="top10" id="top10btn" value= "Top 10" img src="./img/top10.png">
-  
+          <input type="button" class="carriles" id="carrilesbtn" value="Carriles" >
+          <input type="button" class="estadisticas" id="estadisticasbtn" value= "Estadisticas">
         </div>
 
       </section>
       
       <section id="carriles" class="contenedorCarriles">
-        
         <div id="contenedorBotonesCarriles">
-
           <h3>Selecciona un carril y elige a tu campeón</h3>
-
         <div id="botonesCarriles" >
-
           <div id="super" class="cajasCarrilesSuper">
             <img src="./img/carriles/TOP.png" alt="Logo Carril Superior" width="200em" height="200em">
             <input type="button" class="superior" id="superiorBtn" value="Superior">
           </div>
-
           <div id="jun"  class="cajasCarrilesJun"> 
             <img src="./img/carriles/jungla.png" alt="Logo Carril jungla" width="200em" height="200em">
             <input type="button" class="jungla" id="junglaBtn" value="Jungla">
           </div>
-
           <div id="cen" class="cajasCarrilesCen">
             <img src="./img/carriles/mid.png" alt="Logo Carril Central" width="200em" height="200em">
             <input type="button" class="central" id="centralBtn" value="Central">
           </div>
-
           <div id="infe" class="cajasCarrilesInfe">
             <img src="./img/carriles/inferior.png" alt="Logo Carril Inferior" width="200em" height="200em">
             <input type="button" class="inferior" id="inferiorBtn" value="Inferior">
           </div>
-
           <div id="sopor" class="cajasCarrilesSopor">
             <img src="./img/carriles/suport.png" alt="Logo Carril Soporte" width="200em" height="200em">
             <input type="button" class="soporte" id="soporteBtn" value="Soporte">
           </div>
-
         </div>
-        
-
-        </div>
-
-        
-      
-
+       </div>
       </section>
       
       <section id="campeones" class="contenedorCampeones">
-
         <p id="titulo"></p>
-
         <div id="contenedorBotones">
           <input type="button" id="organizar" value="Organizar Ataque">
         </div>
-
         <h2 id="tituloPorRoles"></h2>
-
         <div id="salonCampeones" class="contenedorSalonCampeones"> 
-
             <div id="contenedorRoles" ></div>
-
         </div>    
+      </section>
+
+      <section id="estadisticasLol" class="contenedorEstadisticasLol">
+        <h2>¿Sabias qué?</h2>
+        <img src="./img/computer-game.png" alt="Estadisticas Lol">
+        <p></p>
 
       </section>
-      
-     
 
-
-      
-    </main>
+     </main>
 
     <footer>
       <div class="autors">
-        <h4>Mafe - Yesi</h4>
-
+        <h4>Realizado por: Yesica Blanco & María Valencia.</h4>
       </div>
-
       <div class="logoFinal">
         <img src="./img/lol-final.png" alt="logoFinal" class="imgLogoFinal" >
       </div>
-
     </footer>
-
-    
-
-    <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
