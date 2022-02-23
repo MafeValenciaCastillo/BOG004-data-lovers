@@ -71,7 +71,7 @@ function lolSuperior(){
     btnOrganizar.textContent = "Organizar";
     botonOrganizarLuchadoresAtaque.appendChild(btnOrganizar);
 
-<<<<<<< HEAD
+
     btnOrganizar.addEventListener("click", mostrarEnpantalla(ordenarAtaque()));
 
     function ordenarAtaque() {
