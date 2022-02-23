@@ -45,6 +45,12 @@ h1 {
   display: none;
 }
 
+#campeones {
+  display: none;
+}
+
+
+
 #contenedorRoles {
   display: grid;
   grid-gap: 2em;
@@ -106,10 +112,185 @@ h1 {
 
 .contenedorCarriles {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  /* NO FUNCIONAAAAAAAAAAAAAAAAAAAAA*/
+}
+
+#botonesCarriles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  justify-content: center;
+  grid-gap: 2em;
+  align-items: stretch;
+  justify-items: center;
+}
+
+#contenedorBotonesCarriles {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-items: center;
 }
 
 
+#contenedorBotonesCarriles h3 {
+  color: aliceblue;
+  font-size: 3em;
+  font-family: "Cinzel", serif;
+  margin-top: 2em;
+}
+
+.superior {
+  border-radius: 5px;
+  padding: 0.5em;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #C8AA6E;
+  background-color: #070D15;
+  border-color: #a6751b;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.superior:hover {
+  color: white;
+  border-color: white;
+
+}
+
+.jungla {
+  border-radius: 5px;
+  padding: 0.5em;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #C8AA6E;
+  background-color: #070D15;
+  border-color: #a6751b;
+  border-width: 1px;
+  border-style: solid;
+}
+.jungla:hover {
+  color: white;
+  border-color: white;
+
+}
+
+.central {
+  border-radius: 5px;
+  padding: 0.5em;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #C8AA6E;
+  background-color: #070D15;
+  border-color: #a6751b;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.central:hover {
+  color: white;
+  border-color: white;
+
+}
+.inferior {
+  border-radius: 5px;
+  padding: 0.5em;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #C8AA6E;
+  background-color: #070D15;
+  border-color: #a6751b;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.inferior:hover {
+  color: white;
+  border-color: white;
+
+}
+
+.soporte {
+  border-radius: 5px;
+  padding: 0.5em;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #C8AA6E;
+  background-color: #070D15;
+  border-color: #a6751b;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.soporte:hover {
+  color: white;
+  border-color: white;
+
+}
+
+
+.cajasCarrilesSuper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18em;
+  height: 21em;
+  margin-top: 25em;
+}
+
+.cajasCarrilesJun {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18em;
+  height: 21em;
+  margin-top: 15em;
+}
+
+.cajasCarrilesCen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18em;
+  height: 21em;
+  margin-top: 4em;
+}
+
+.cajasCarrilesInfe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18em;
+  height: 21em;
+  margin-top: 15em;
+}
+
+.cajasCarrilesSopor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18em;
+  height: 21em;
+  margin-top: 25em;
+}
 
 #contenedorBotones button {
   border-radius: 5px;
@@ -221,7 +402,8 @@ footer {
   border-top: 0.3em solid #a6751b;
   bottom: 0;
   width: 100%;
-  margin-top: auto;
+  position: fixed;
+  margin-top: 5em;
 }
 
 .autors h4 {
