@@ -8,6 +8,16 @@ staticsMovespeed(arrayDatos);
 staticsAttackRange(arrayDatos);
 staticsAttackDamage(arrayDatos);
 
+
+document.getElementById("logoHome").addEventListener("click", regresarHome)
+function regresarHome(){
+    document.getElementById('home').style.display = 'block';
+    document.getElementById('carriles').style.display = 'none';
+    document.getElementById('estadisticasLol').style.display = 'none';
+    document.getElementById("salonCampeones").style.display = "none";
+    document.getElementById("campeones").style.display = "none";
+}
+
 //Para pintar podemos usar:literaltemplates
 
 const informacionCampeon = document.getElementById("contenedorRoles");

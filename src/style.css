@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -15,9 +14,8 @@ body {
   background-color: #0d0e1d;
   height: 6em;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 0.4em solid #a6751b;
-  justify-content: flex-start;
   /*width: 100%;*/
   grid-column: 1 / -1;
 }
@@ -26,15 +24,17 @@ h1 {
   padding-left: 2em;
   color: aliceblue;
   font-family: "Cinzel", serif;
-  font-size: 1.5em;
-  flex-basis: 40%;
+  font-size: 1em;
+  width: 210px;
+  /*flex-basis: 40%;*/
   /*border: 1px solid red;*/
 }
 
 .contenedorLogo {
   display: flex;
   justify-content: center;
-  flex-basis: 20%;
+  width: 210px;
+  /*flex-basis: 20%;
   /*border: 1px solid red;*/
 }
 
@@ -55,10 +55,12 @@ h1 {
 }
 
 #contenedorRoles {
-  display: grid;
-  grid-gap: 2em;
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3em;
+  margin-bottom: 3.125em;
   width: 100%;
   justify-items: center;
 }
@@ -182,11 +184,14 @@ h1 {
 }
 
 #datosCuriosos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2em; /* es la distancia que hay entre cada tarjetica o div*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3.5em;
+  /* es la distancia que hay entre cada tarjetica o div*/
   justify-items: center;
-  margin: 2em 10em;
+  justify-content: center;
+  margin: 2em 22em;
   color: #111224;
 }
 
@@ -461,9 +466,10 @@ h1 {
 
 .enlace {
   display: flex;
-  flex-basis: 40%;
+  /*flex-basis: 40%;*/
   justify-content: flex-end;
   padding-right: 3em;
+  width: 210px;
   /*border: 1px solid red;*/
 }
 
@@ -588,12 +594,25 @@ footer {
 
 @media screen and (min-width: 1200px) {
   .divImgPrincipal {
-    height: 105%;
+    height: 100%;
   }
 }
 @media screen and (max-width: 640px) {
   .imgPrincipal {
     height: 300px;
     width: 640px;
+  }
+
+  h1 {
+    font-size: 0.7em;
+    width: 33%;
+  }
+
+  .contenedorLogo {
+    width: 33%;
+  }
+
+  .enlace {
+    width: 33%;
   }
 }
