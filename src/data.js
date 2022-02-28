@@ -4,7 +4,6 @@
 // const arrayDatos = Object.values(data.data);
 
 
-
 export const ordenarPorAtaque = (copyArrayDatos) => {
   let ordenarAtaque = copyArrayDatos.sort((a, b) => {
     if (a.info.attack > b.info.attack ) {
