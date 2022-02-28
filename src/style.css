@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -53,7 +54,6 @@ h1 {
   display: none;
 }
 
-
 #contenedorRoles {
   display: grid;
   grid-gap: 2em;
@@ -64,9 +64,9 @@ h1 {
 }
 
 .propiedadesRoles {
-  width: 18em;
-  height: 21em;
-  background-image: url(./img/fondoTarjetas.jpg);
+  width: 20em;
+  height: 29em;
+  background-color: #0d0e1d;
   background-size: contain;
   border-radius: 0.5em;
   border: #a6751b 0.3em outset;
@@ -74,8 +74,45 @@ h1 {
   flex-direction: column;
 }
 
-.propiedadesRoles h3 h4 {
-  margin-bottom: 0;
+.propiedadesRoles:hover {
+  width: 25em;
+  height: 32em;
+  background-color: #0d0e1d;
+  background-size: contain;
+  border-radius: 1em;
+  border: #a6751b 0.6em outset;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedorSalonCampeones h2 {
+  margin-bottom: 0%;
+}
+.contenedorSalonCampeones h2:hover {
+  margin-bottom: 0%;
+}
+.contenedorSalonCampeones h3 {
+  margin-bottom: 0%;
+}
+
+.contenedorSalonCampeones h3:hover {
+  margin-bottom: 0%;
+}
+
+.contenedorSalonCampeones h4 {
+  margin-bottom: 0%;
+}
+
+.contenedorSalonCampeones h4:hover {
+  margin-bottom: 0%;
+}
+
+.contenedorSalonCampeones h5 {
+  margin-bottom: 0%;
+}
+
+.contenedorSalonCampeones h5:hover {
+  margin-bottom: 0%;
 }
 
 .contenedorCampeones {
@@ -92,33 +129,124 @@ h1 {
 }
 
 #tituloPorRoles {
-  padding-top: 3em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  padding-top: 0.5em;
+  font-family: "Cinzel", serif;
+  border-top: #a6751b solid 0.1em;
+  font-size: 2em;
 }
 
 #salonCampeones {
   display: none;
 }
 
+/*NUEVO BOTON ORGANIZAR--------------------------------------------------------------------------------------*/
+
+#contenedorBotonOrganizarAtaque {
+  display: none;
+}
+
+#organizar {
+  border-radius: 5px;
+  padding: 0.4em 0.5em;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: #c8aa6e;
+  background-color: #070d15;
+  border-color: #a6751b;
+  border-width: 0.14em;
+  border-style: solid;
+  margin-bottom: 2%;
+}
+
+/*NUEVO BOTON ORGANIZAR--------------------------------------------------------------------------------------*/
+
+/*PAGINA DE ESTADISTICAS*/
+
+#estadisticasTitulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  font-family: "Cinzel", serif;
+  color: aliceblue;
+}
+
+#estadisticasTitulo h2 {
+  margin: 1em 1em; /* se afecta arriba-abajo y derecha-izq*/
+  font-size: 3em;
+}
+
+#datosCuriosos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em; /* es la distancia que hay entre cada tarjetica o div*/
+  justify-items: center;
+  margin: 2em 10em;
+  color: #111224;
+}
+
+.datos {
+  /*la clase si se pueden compartir. Los id NO. La tarjeta*/
+  width: 18em;
+  height: 21em;
+  background-color: #a6751b;
+  border-radius: 0.5em;
+  border: whitesmoke 0.2em outset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cinzel", serif;
+  font-weight: bolder;
+}
+
+.datos:hover {
+  width: 23em;
+  height: 26em;
+  background-color: #a6751b;
+  border-radius: 1em;
+  border: whitesmoke 0.4em outset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cinzel", serif;
+  font-size: 1.2em;
+  font-weight: bolder;
+}
+
+.datos p {
+  padding: 1em 2em;
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  padding: 0 1em;
+  font-size: 1.1em;
+}
+
+.datos p:hover {
+  padding: 1em 2em;
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
 .contenedorSalonCampeones {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /*margin-left: 4%; */
   color: aliceblue;
 }
-
-/*.contenedorHome {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}*/
 
 .contenedorCarriles {
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  /* NO FUNCIONAAAAAAAAAAAAAAAAAAAAA*/
 }
 
 #botonesCarriles {
@@ -138,6 +266,33 @@ h1 {
   justify-items: center;
 }
 
+#botonAtras {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 2em;
+  margin-left: 5em;
+}
+
+#atrasBtn {
+  border-radius: 5px;
+  padding: 0.5em;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #c8aa6e;
+  background-color: #070d15;
+  border-color: #a6751b;
+  border-width: 0.14em;
+  border-style: solid;
+}
+
+#atrasBtn:hover {
+  color: white;
+  border-color: white;
+}
 
 #contenedorBotonesCarriles h3 {
   color: aliceblue;
@@ -154,8 +309,8 @@ h1 {
   font-family: "Cinzel", serif;
   font-size: 1.5em;
   font-weight: bold;
-  color: #C8AA6E;
-  background-color: #070D15;
+  color: #c8aa6e;
+  background-color: #070d15;
   border-color: #a6751b;
   border-width: 0.14em;
   border-style: solid;
@@ -164,7 +319,6 @@ h1 {
 .superior:hover {
   color: white;
   border-color: white;
-
 }
 
 .jungla {
@@ -175,8 +329,8 @@ h1 {
   font-family: "Cinzel", serif;
   font-size: 1.5em;
   font-weight: bold;
-  color: #C8AA6E;
-  background-color: #070D15;
+  color: #c8aa6e;
+  background-color: #070d15;
   border-color: #a6751b;
   border-width: 0.14em;
   border-style: solid;
@@ -184,7 +338,6 @@ h1 {
 .jungla:hover {
   color: white;
   border-color: white;
-
 }
 
 .central {
@@ -195,8 +348,8 @@ h1 {
   font-family: "Cinzel", serif;
   font-size: 1.5em;
   font-weight: bold;
-  color: #C8AA6E;
-  background-color: #070D15;
+  color: #c8aa6e;
+  background-color: #070d15;
   border-color: #a6751b;
   border-width: 0.14em;
   border-style: solid;
@@ -205,7 +358,6 @@ h1 {
 .central:hover {
   color: white;
   border-color: white;
-
 }
 .inferior {
   border-radius: 5px;
@@ -215,8 +367,8 @@ h1 {
   font-family: "Cinzel", serif;
   font-size: 1.5em;
   font-weight: bold;
-  color: #C8AA6E;
-  background-color: #070D15;
+  color: #c8aa6e;
+  background-color: #070d15;
   border-color: #a6751b;
   border-width: 0.14em;
   border-style: solid;
@@ -225,7 +377,6 @@ h1 {
 .inferior:hover {
   color: white;
   border-color: white;
-
 }
 
 .soporte {
@@ -236,8 +387,8 @@ h1 {
   font-family: "Cinzel", serif;
   font-size: 1.5em;
   font-weight: bold;
-  color: #C8AA6E;
-  background-color: #070D15;
+  color: #c8aa6e;
+  background-color: #070d15;
   border-color: #a6751b;
   border-width: 0.14em;
   border-style: solid;
@@ -246,9 +397,7 @@ h1 {
 .soporte:hover {
   color: white;
   border-color: white;
-
 }
-
 
 .cajasCarrilesSuper {
   display: flex;
@@ -304,6 +453,10 @@ h1 {
   font-size: 2em;
   font-weight: bold;
   color: #a6751b;
+}
+
+#Organizar {
+  display: none;
 }
 
 .enlace {
@@ -405,15 +558,13 @@ footer {
   border-top: 0.3em solid #a6751b;
   bottom: 0;
   width: 100%;
-  position:static;
+  position: static;
   margin-top: 5em;
 }
 
-.autors h4 {
+.autors {
   color: aliceblue;
   font-family: "Source Sans Pro", sans-serif;
-  flex-basis: 70%;
-  padding-right: 5em;
 }
 
 .logoFinal {

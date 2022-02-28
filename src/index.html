@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,7 +20,6 @@
         <a href="https://www.leagueoflegends.com/es-es/">Ir a jugar</a>
       </div>
     </header>
-
     <main>
       <section id="home" class="contenedorHome">
         <div class="divImgPrincipal">
@@ -28,33 +28,33 @@
         <article class="reseña">
           <h2 class="tituloReseña">¿Qué es League of Legends?</h2>
           <p class="textoReseña">
-            League of Legends es un juego de estrategia por equipos en el que dos equipos de cinco campeones se enfrentan para ver quién destruye antes la base del otro. Elige de entre un elenco de 140 campeones para realizar jugadas épicas, asesinar rivales y derribar torretas para alzarte con la victoria.
+            League of Legends es un juego de estrategia por equipos en el que dos equipos de cinco campeones se enfrentan para ver quién destruye antes la base del otro. Elige de entre un elenco de 134 campeones para realizar jugadas épicas, asesinar rivales y derribar torretas para alzarte con la victoria.
           </p>
-
           <h2 class="tituloTextojuego">¿Cómo jugar League of Legends?</h2>
           <p class = "textoJuego">
-   
-          Una vez en el juego, deberás escoger entre 150 personajes existentes (o campeones) para pelear en una arena de combate con el ánimo de destruir el ‘Nexo’ ubicado en la base enemiga. La arena permite la participación de dos equipos (azul y rojo) con cinco jugadores cada uno y que deberán sortear diferentes dificultades con el ánimo de llegar al territorio enemigo pasando primero por número considerable de defensas llamadas torretas que deberán derrotar con el ánimo de avanzar en el juego.<br>
+          Una vez en el juego, deberás escoger entre 134 personajes existentes (o campeones) para pelear en una arena de combate con el ánimo de destruir el ‘Nexo’ ubicado en la base enemiga. La arena permite la participación de dos equipos (azul y rojo) con cinco jugadores cada uno y que deberán sortear diferentes dificultades con el ánimo de llegar al territorio enemigo pasando primero por número considerable de defensas llamadas torretas que deberán derrotar con el ánimo de avanzar en el juego.<br>
 
           <br>Si quieres ganar una partida tienes que conocer y elegir muy bien alguno de Los 5 carriles de League of Legends. Los 5 jugadores de tu equipo (incluyéndote) se repartirán de la siguiente forma: uno a la calle superior, uno a la calle central, uno a la calle inferior, otro como soporte y otro a la jungla. Cada posición tiene muy definido el tipo o tipos de campeones que se ajustan mejor. Así que será de vital importancia conocerlos antes de iniciar tu juego. En nuestro botón “Carriles” encontrarás la información necesaria para que selecciones el que mejor te conviene.<br>
 
           <br>Cada semana tenemos nuestro Top 10, de los campeones más jugados en las partidas mundiales. 
            Te invitamos a conocerlos haciendo clic en el boton "Top 10".<br>
           </p>
-
         </article>
    
         <div class="botones">
           <input type="button" class="carriles" id="carrilesbtn" value="Carriles" >
-          <input type="button" class="estadisticas" id="estadisticasbtn" value= "Estadisticas">
+          <input type="button" class="estadisticas" id="estadisticasbtn" value= "Curiosidades">
         </div>
 
       </section>
       
       <section id="carriles" class="contenedorCarriles">
         <div id="contenedorBotonesCarriles">
+          <div id="botonAtras">
+            <input type="button" class="atras" id="atrasBtn" value="Atrás">
+          </div>
           <h3>Selecciona un carril y elige a tu campeón</h3>
-        <div id="botonesCarriles" >
+          <div id="botonesCarriles" >
           <div id="super" class="cajasCarrilesSuper">
             <img src="./img/carriles/TOP.png" alt="Logo Carril Superior" width="200em" height="200em">
             <input type="button" class="superior" id="superiorBtn" value="Superior">
@@ -82,29 +82,58 @@
       <section id="campeones" class="contenedorCampeones">
         <p id="titulo"></p>
         <div id="contenedorBotones">
-          <input type="button" id="organizar" value="Organizar Ataque">
         </div>
         <h2 id="tituloPorRoles"></h2>
+        <div id="contenedorBotonOrganizarAtaque">   <!--NUEVO BOTON ORGANIZAR-->
+         <input type="button" id="organizar" value="Organizar Ataque">
+        </div> <!--NUEVO BOTON ORGANIZAR-->
         <div id="salonCampeones" class="contenedorSalonCampeones"> 
             <div id="contenedorRoles" ></div>
         </div>    
       </section>
 
+         <!--Nuevo para la pagina estaditica-->
       <section id="estadisticasLol" class="contenedorEstadisticasLol">
-        <h2>¿Sabias qué?</h2>
-        <img src="./img/computer-game.png" alt="Estadisticas Lol">
-        <p></p>
-
+        <div id="estadisticasTitulo">
+          <img src="./img/computer-game.png" alt="Estadisticas Lol" width="80em" height="80em">
+          <h2>¿Sabias qué?</h2>
+          <img src="./img/computer-game.png" alt="Estadisticas Lol" width="80em" height="80em">
+        </div>
+        <div id="datosCuriosos" >
+ 
+          <div id="datoCurioso1" class="datos">
+            <img src="./img/estadisticas/speed.png" alt="Rapidez" width="150em" height="150em">
+            <p id="speed"></p>
+          </div>
+          <div id="datoCurioso2" class="datos">
+            <img src="./img/estadisticas/damage.png" alt="Daño" width="150em" height="150em">
+            <p id="damage"></p>
+          </div>
+          <div id="datoCurioso3" class="datos">
+            <img src="./img/estadisticas/first-aid.png" alt="Rango" width="150em" height="150em">
+            <p id="rango"></p>
+          </div>
+          <div id="datoCurioso4" class="datos">
+            <img src="./img/estadisticas/trofeo.png" alt="trofeo" width="115em" height="115em">
+            <p>Wordls 2022 es la 7 temporada del mundial de LOL. El evento junta equipos provenientes de todos los continentes. Llegan a la competencia deseosos de poder ganar la Copa de Invocador y el premio de medio millón de dólares.</p>
+          </div>
+          <div id="datoCurioso5" class="datos">
+            <img src="./img/estadisticas/link.png" alt="equipo" width="150em" height="150em">
+            <p>El equipo surcoreano SKT ha acomulado a lo largo de 7 años,  un total de 13 victorias (entre títulos y copas), lo que lo convierte en el equipo con más prometedor para los campeonatos mndiales.</p>
+          </div>
+          <div id="datoCurioso6" class="datos">
+            <img src="./img/estadisticas/tv-monitor.png" alt="serie" width="150em" height="150em">
+            <p>Arcane, es la serie oficial de League of Legends que estrenó Netflix. Fue tanto el éxito que ya está confirmada la segunda temporada.</p>
+          </div>
+        </div>
+      <!--Nuevo para la pagina estaditica-->
       </section>
 
      </main>
 
     <footer>
       <div class="autors">
-
-
-        <h4>Realizado por: Yesica Blanco & María Valencia</h4>
-
+        <h4>Realizado por: Yesica Blanco y María Valencia.</h4>
       </div>
       <div class="logoFinal">
         <img src="./img/lol-final.png" alt="logoFinal" class="imgLogoFinal" >

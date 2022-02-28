@@ -1,9 +1,9 @@
+
 import data from './data/lol/lol.js';
 import { ordenarPorAtaque, rolFiltro, staticsMovespeed, staticsAttackRange, staticsAttackDamage } from './data.js';
 const arrayDatos = Object.values(data.data);
-
 const copyArrayDatos = [...arrayDatos];
-
+(copyArrayDatos);
 staticsMovespeed(arrayDatos);
 staticsAttackRange(arrayDatos);
 staticsAttackDamage(arrayDatos);
@@ -18,9 +18,13 @@ const mostrarEnpantalla = (campeones) => {
     let tarjeta = document.createElement("div");
     tarjeta.setAttribute("class", "propiedadesRoles")
     tarjeta.innerHTML = ` <img class = "image" src = ${imagen}>
-    <h3>${campeon.name}</h3>
-    <h4>${campeon.title}</h4> 
-    <h4>${"Nivel de ataque: " + campeon.info.attack}</h4> `
+    <h2>${campeon.name}</h2>
+    <h3>${campeon.title}</h3> 
+    <h3>${"Nivel de ataque: " + campeon.info.attack}</h3>
+    <h3>${"Defensa: " + campeon.info.defense}</h3>
+    <h3>${"Magia: " + campeon.info.magic}</h3>
+    <h3>${"Dificultad: " + campeon.info.difficulty}</h3>
+    `
     informacionCampeon.appendChild(tarjeta);
 }) 
 }
@@ -40,7 +44,9 @@ function hidePagesEstadisticas(){
     document.getElementById('estadisticasLol').style.display = 'block';
 }
 
-
+document.getElementById("speed").innerHTML = "El promedio de rapidez de los campeones es de: " + staticsMovespeed(arrayDatos) + ".";
+document.getElementById("damage").innerHTML = "El promedio de Daño de los campeones es de: " + staticsAttackDamage(arrayDatos) + ".";
+document.getElementById("rango").innerHTML = "El promedio de Rango de ataque de los campeones es de: " + staticsAttackRange(arrayDatos) + ".";
 
 document.getElementById("organizar").addEventListener("click", () => {
     let filtro = document.getElementById("tituloPorRoles").textContent;
@@ -57,9 +63,17 @@ document.getElementById("organizar").addEventListener("click", () => {
     }else if (filtro == "Soporte"){
         filtro = "Support"
     }
-    const ataqueOrdenado = ordenarPorAtaque(rolFiltro(filtro));
+    const ataqueOrdenado = ordenarPorAtaque(rolFiltro(arrayDatos, filtro));
     mostrarEnpantalla(ataqueOrdenado)
 });
+
+document.getElementById("atrasBtn").addEventListener("click", regresar);
+
+function regresar (){
+    document.getElementById("carriles").style.display = "none";
+    document.getElementById("home").style.display = "block";   
+}
+
 
 //Boton Carril Superior
 document.getElementById("superiorBtn").addEventListener("click", lolSuperior);
@@ -72,44 +86,33 @@ function lolSuperior(){
     document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Superior";
     document.getElementById("tituloPorRoles").innerHTML = "Luchadores y Tanques";
 
-    mostrarEnpantalla(rolFiltro("Fighter") , rolFiltro("Tank"));
+    mostrarEnpantalla(rolFiltro(arrayDatos, "Fighter") , rolFiltro(arrayDatos, "Tank"));
     
      //Creacion del boton luchador
      const contenedorBotonLuchador = document.getElementById("contenedorBotones");
      let btnLuchador = document.createElement("button");
      btnLuchador.textContent = "Luchadores";
      contenedorBotonLuchador.appendChild(btnLuchador);
-     
      btnLuchador.addEventListener("click", mostrarLuchadores);
 
      function mostrarLuchadores() {
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Luchadores";
-        mostrarEnpantalla(rolFiltro("Fighter"));
+        document.getElementById("contenedorBotonOrganizarAtaque").style.display = "block";//NUEVO BOTON ORGANIZAR
+        mostrarEnpantalla(rolFiltro(arrayDatos,"Fighter"));
     }
-
         
     //Creacion del boton Tanques
-
-    const botonOrganizarLuchadoresAtaque = document.getElementById("contenedorBotones");
-    let btnOrganizar = document.createElement("button");
-    btnOrganizar.textContent = "Organizar";
-    botonOrganizarLuchadoresAtaque.appendChild(btnOrganizar);
-
-
-    btnOrganizar.addEventListener("click", mostrarEnpantalla(ordenarAtaque()));
-
-    function ordenarAtaque() {
-
     const contenedorBotonTanque = document.getElementById("contenedorBotones");
     let btnTanques = document.createElement("button");
     btnTanques.textContent = "Tanques";
+    contenedorBotonTanque.appendChild(btnTanques);
  
     btnTanques.addEventListener("click", mostrarTanques);
     function mostrarTanques() {
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Tanques";
-        mostrarEnpantalla(rolFiltro("Tank"));
+        mostrarEnpantalla(rolFiltro(arrayDatos, "Tank"));
     }
    
 }
@@ -124,7 +127,7 @@ function lolJungla(){
 
     document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Jungla";
 
-    mostrarEnpantalla(rolFiltro("Fighter"));
+    mostrarEnpantalla(rolFiltro(arrayDatos, "Fighter"));
 
     const botonLuchador = document.getElementById("contenedorBotones");
     let btnLuchador = document.createElement("button");
@@ -135,7 +138,8 @@ function lolJungla(){
     function mostrarLuchadores() {
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Luchadores";
-        mostrarEnpantalla(rolFiltro("Fighter"));
+        document.getElementById("contenedorBotonOrganizarAtaque").style.display = "block";//NUEVO BOTON ORGANIZAR
+        mostrarEnpantalla(rolFiltro(arrayDatos, "Fighter"));
     }
 }
 
@@ -149,7 +153,7 @@ function lolCentral(){
 
     document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Central";
 
-    mostrarEnpantalla(rolFiltro("Assassin") , rolFiltro("Mage"));
+    mostrarEnpantalla(rolFiltro(arrayDatos, "Assassin") , rolFiltro(arrayDatos, "Mage"));
 
 
     //Creacion del boton Asesinos
@@ -162,7 +166,8 @@ function lolCentral(){
     function mostrarAsesinos() {
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Asesinos";
-        mostrarEnpantalla(rolFiltro("Assassin"));
+        document.getElementById("contenedorBotonOrganizarAtaque").style.display = "block";//NUEVO BOTON ORGANIZAR
+        mostrarEnpantalla(rolFiltro(arrayDatos, "Assassin"));
     }
 
     //Creacion del Magos
@@ -175,7 +180,8 @@ function lolCentral(){
     function mostrarMagos() {
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Magos";
-        mostrarEnpantalla(rolFiltro("Mage"));    }
+        document.getElementById("contenedorBotonOrganizarAtaque").style.display = "block";//NUEVO BOTON ORGANIZAR
+        mostrarEnpantalla(rolFiltro(arrayDatos, "Mage"));    }
     }
 
 // Boton Carril Inferior
@@ -188,7 +194,7 @@ function lolInferior(){
 
     document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Inferior";
 
-    mostrarEnpantalla(rolFiltro("Marksman") , rolFiltro("Support"));
+    mostrarEnpantalla(rolFiltro(arrayDatos, "Marksman") , rolFiltro(arrayDatos, "Support"));
 
     //Creacion del boton Tiradores
     const botonTiradores = document.getElementById("contenedorBotones");
@@ -200,7 +206,8 @@ function lolInferior(){
     function mostrarTiradores() {
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Tiradores";
-        mostrarEnpantalla(rolFiltro("Marksman")); 
+        document.getElementById("contenedorBotonOrganizarAtaque").style.display = "block";//NUEVO BOTON ORGANIZAR
+        mostrarEnpantalla(rolFiltro(arrayDatos, "Marksman")); 
     }
 
     //Creacion del Soporte
@@ -213,7 +220,7 @@ function lolInferior(){
     function ocultarT() {
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Soporte";
-        mostrarEnpantalla(rolFiltro("Support")); 
+        mostrarEnpantalla(rolFiltro(arrayDatos, "Support")); 
     }
 }
 
@@ -228,7 +235,7 @@ function lolSoporte(){
 
     document.getElementById("titulo").innerHTML = "Estos son los mejores campeones para el carril Soporte";
 
-    mostrarEnpantalla(rolFiltro("Support") , rolFiltro("Tank"));
+    mostrarEnpantalla(rolFiltro(arrayDatos, "Support") , rolFiltro(arrayDatos, "Tank"));
 
     //Creacion del Soporte
     const botonSoporte = document.getElementById("contenedorBotones");
@@ -240,7 +247,8 @@ function lolSoporte(){
     function mostrarSoporte() {
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Soporte";
-        mostrarEnpantalla(rolFiltro("Support")); 
+        document.getElementById("contenedorBotonOrganizarAtaque").style.display = "block";//NUEVO BOTON ORGANIZAR
+        mostrarEnpantalla(rolFiltro(arrayDatos, "Support")); 
     }
 
     //Creacion del boton Tanques
@@ -253,6 +261,6 @@ function lolSoporte(){
     function mostrarTanques() {
         informacionCampeon.innerHTML = "";
         document.getElementById("tituloPorRoles").innerHTML = "Tanques";
-        mostrarEnpantalla(rolFiltro("Tank"))
+        mostrarEnpantalla(rolFiltro(arrayDatos, "Tank"))
     }
 }
