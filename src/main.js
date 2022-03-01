@@ -1,4 +1,3 @@
-
 import data from './data/lol/lol.js';
 import { ordenarPorAtaque, rolFiltro, staticsMovespeed, staticsAttackRange, staticsAttackDamage } from './data.js';
 const arrayDatos = Object.values(data.data);

@@ -21,13 +21,13 @@ body {
 }
 
 h1 {
-  padding-left: 2em;
+  /*padding-left: 2em;*/
   color: aliceblue;
   font-family: "Cinzel", serif;
-  font-size: 1em;
-  width: 210px;
+  font-size: 1.4em;
   /*flex-basis: 40%;*/
   /*border: 1px solid red;*/
+  /*margin-left: 2em;*/
 }
 
 .contenedorLogo {
@@ -37,6 +37,12 @@ h1 {
   /*flex-basis: 20%;
   /*border: 1px solid red;*/
 }
+
+header img {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
 
 #home {
   display: block;
@@ -273,10 +279,11 @@ h1 {
 
 #botonAtras {
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: flex-start;
   margin-top: 2em;
-  margin-left: 5em;
+  /*margin-left: 5em;*/
+  
 }
 
 #atrasBtn {
@@ -303,7 +310,7 @@ h1 {
   color: aliceblue;
   font-size: 3em;
   font-family: "Cinzel", serif;
-  margin-top: 2em;
+  /*margin-top: 2em;*/
 }
 
 .superior {
@@ -565,7 +572,7 @@ footer {
   bottom: 0;
   width: 100%;
   position: static;
-  margin-top: 5em;
+  /*margin-top: 5em;*/
 }
 
 .autors {
@@ -597,6 +604,7 @@ footer {
     height: 100%;
   }
 }
+
 @media screen and (max-width: 640px) {
   .imgPrincipal {
     height: 300px;
@@ -614,5 +622,14 @@ footer {
 
   .enlace {
     width: 33%;
+  }
+
+  #botonesCarriles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);    
+    grid-gap: 2em;
+    justify-content: center;
+    align-items: stretch;
+    justify-items: center;
   }
 }
