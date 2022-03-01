@@ -1,4 +1,5 @@
-# 🐶🐱 Bienvenidos a la Grieta del invocador. LOL 🐱🐶
+# ⚔️⚔️ Bienvenidos a la Grieta del invocador. LOL ⚔️⚔️
+
 ## Índice
 * [1. Preámbulo](#1-preámbulo)
 * [2. Objetivos de aprendizaje](#2-objetivos-de-aprendizaje)
@@ -26,7 +27,7 @@ al lado derecho.
 
 ![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
 
-## 3. Objetivos de aprendizaje
+## 2. Objetivos de aprendizaje
 
 Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
 
